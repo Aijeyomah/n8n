@@ -39,7 +39,7 @@ describe('ZendeskTrigger Node', () => {
 
 			expect(result).toBe(false);
 			const deleteCalls = apiRequestSpy.mock.calls.filter(
-				([, , endpoint]) =>
+				([, endpoint]) =>
 					typeof endpoint === 'string' && endpoint.startsWith('/triggers/destroy_many'),
 			);
 			expect(deleteCalls).toHaveLength(0);
